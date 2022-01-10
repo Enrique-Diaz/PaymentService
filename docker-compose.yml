@@ -1,0 +1,28 @@
+#version: '1'
+#services:
+#  h2:
+#    image: 1000kit/h2
+#    restart: always
+#    environment:
+#      - H2_DATABASE=paymentsdb
+#      - H2_USER=sa
+#      - H2_PASSWORD=
+#    ports:
+#      - 8181:8181
+#    volumes:
+#      - h2-data:/opt/h2-data
+#  app:
+#    build: ./
+#    restart: on-failure
+#    depends_on:
+#      - h2
+#    ports:
+#      - 8080:8080
+#    environment:
+#      - DATABASE_HOST=h2
+#      - DATABASE_USER=sa
+#      - DATABASE_PASSWORD=
+#      - DATABASE_NAME=paymentsdb
+#      - DATABASE_PORT=8181
+#volumes:
+#  h2-data:
